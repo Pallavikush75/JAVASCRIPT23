@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+     <!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <script>
+        function validateForm() {
+            let name = document.forms["registrationForm"]["name"].value;
+            let roll = document.forms["registrationForm"]["roll"].value;
+            let course = document.forms["registrationForm"]["course"].value;
+            let branch = document.forms["registrationForm"]["branch"].value;
+            let gender = document.forms["registrationForm"]["gender"].value;
+            let dob = document.forms["registrationForm"]["dob"].value;
+            let email = document.forms["registrationForm"]["email"].value;
+            let mobile = document.forms["registrationForm"]["mobile"].value;
+            let address = document.forms["registrationForm"]["address"].value;
+            let hobbies = document.forms["registrationForm"]["hobbies"];
+
+            if (name === "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            if (roll === "") {
+                alert("Roll number must be filled out");
+                return false;
+            }
+            if (course === "") {
+                alert("Course must be filled out");
+                return false;
+            }
+            if (branch === "") {
+                alert("Branch must be filled out");
+                return false;
+            }
+            if (!gender) {
+                alert("Gender must be selected");
+                return false;
+            }
+            if (dob === "") {
+                alert("Date of birth must be filled out");
+                return false;
+            }
+            if (email === "") {
+                alert("Email must be filled out");
+                return false;
+            }
+            if (mobile === "") {
+                alert("Mobile number must be filled out");
+                return false;
+            }
+            if (address === "") {
+                alert("Address must be filled out");
+                return false;
+            }
+
+            // Check if at least one hobby is selected
+            let hobbySelected = false;
+            for (let i = 0; i < hobbies.length; i++) {
+                if (hobbies[i].checked) {
+                    hobbySelected = true;
+                    break;
+                }
+            }
+            if (!hobbySelected) {
+                alert("At least one hobby must be selected");
+                return false;
+            }
+        }   
+    </script>
+</head>
+<body>
+    <h2 align="center">Registration Form</h2>
+
+    <form name="registrationForm" onsubmit="return validateForm()">
+
+        <label>Student Name:</label>
+        <input type="text" name="name"><br><br>
+
+        <label>Roll Number:</label>
+        <input type="text" name="roll"><br><br>
+
+        <label>Course:</label>
+        <input type="text" name="course"><br><br>
+
+        <label>Branch:</label>
+        <select name="branch">
+            <option value="">--Select--</option>
+            <option>CSE</option>
+            <option>IT</option>
+            <option>ECE</option>
+            <option>EEE</option>
+            <option>ME</option>
+            <option>CE</option>
+        </select>
+        <br><br>
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
+        <br><br>
+
+        <label>Date of Birth:</label>
+        <input type="date" name="dob"><br><br>
+
+        <label>Email:</label>
+        <input type="email" name="email"><br><br>
+
+        <label>Mobile Number:</label>
+        <input type="tel" name="mobile"><br><br>
+
+        <label>Address:</label><br>
+        <textarea name="address" rows="4" cols="30"></textarea><br><br>
+
+        <label>Hobbies:</label><br>
+        <input type="checkbox" name="hobbies" value="Reading"> Reading
+        <input type="checkbox" name="hobbies" value="Sports"> Sports
+        <input type="checkbox" name="hobbies" value="Music"> Music
+        <input type="checkbox" name="hobbies" value="Dancing"> Dancing
+        <br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form>
+</body>
+</html>
